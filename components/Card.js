@@ -30,26 +30,24 @@ export default function Cards(props) {
 
   return (
     <>
-
+  <Group className="box">
     <Card shadow="xs" p="lg" radius="md"  withBorder>
-      
-
-      <Button onClick={props.code}  color="blue" fullWidth mt="md" radius="md">
+      <Group>
+      <Text variant=''>{props.data}</Text>
+      <Button onClick={props.func}  color="blue" fullWidth mt="md" radius="md">
         {props.btnName}
       </Button>
-          <Group position="apart" mt="md" mb="xs">
-          
+      <Group position="apart" mt="md" mb="xs">  
           <Button onClick={() => setOpened(true)} variant="light" color="blue"  mt="md" radius="md">
-           {`<> Get code`}
+            {`<> Get code`}
           </Button>
-          
           <Text variant="link" target="_blank" mt="md" radius="md" component="a" href={props.offLink}>
           <Group> Documentation <Image src={iconExtLink} width="24px"/></Group>
           </Text>
-        
-          </Group>
+        </Group>
+      </Group>
     </Card>
-    
+  </Group>
     <Modal opened={opened} onClose={() => setOpened(false)} title="Code">
    
     <Group position='center' >
