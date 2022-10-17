@@ -10,9 +10,12 @@ export default function MainLayout({children}) {
   return (
     <>
       <Group>
-            <Group>
+            <Group position="left" ml="8px">
                 <Box sx={{ width: 240 }} >
-                    <Link href="/provider"><NavLink label="Provider Events" variant="light" /></Link>        
+                    <NavLink label="Provider Events" variant="light">
+                      <Link href="/provider"><NavLink label="Provider" variant="light"/></Link>
+                      <Link href="/ens"><NavLink label="ENS methods" variant="light"/></Link>
+                    </NavLink>       
                     <Link href="/contract"><NavLink label="Contract Events" variant="light" /></Link>
                     <Link href="/signer"><NavLink label="Signer Events" variant="light" /></Link>
                     {/* <Link href="/signer"><NavLink label="Signer Events" variant="light" 

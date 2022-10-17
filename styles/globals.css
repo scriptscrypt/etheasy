@@ -9,3 +9,6 @@ body {
   width: 336px;
   height: 400px;
 }
+.pointer{
+  cursor: pointer;
+}

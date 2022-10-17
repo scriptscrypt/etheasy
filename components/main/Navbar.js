@@ -3,7 +3,9 @@ import { Button, Group, Text, Alert, Modal} from "@mantine/core";
 import { useState } from "react";
 // import {provider} from "../Variables"
 import { ethers } from "ethers";
-
+import Image from "next/image";
+import logo from "../../public/images/svgs/logo.svg"
+import Link from "next/link";
 
 export default function Navbar() {
     const [walAddress, setWalAddress] = useState("");
@@ -28,8 +30,10 @@ export default function Navbar() {
 
   return (
     <>
-    <Group position="apart" m="8px"> 
-        <Text size="md">Logo</Text>
+    <Group position="apart" m="16px"> 
+        <Link href="/" >
+            <Image src={logo} height="32px" className="pointer"/>
+        </Link>
 
         <Group>  
             {walAddress}
@@ -39,10 +43,10 @@ export default function Navbar() {
     </Group> 
 
     <Modal opened={opened} onClose={() => setOpened(false)} title="Metamask - RPC error">
-    
-    <Alert title="Please check your Metamask wallet" color="red">
-    {errMsg}
-    </Alert>
+        
+        <Alert title="Please check your Metamask wallet" color="red">
+        {errMsg}
+        </Alert>
 
     </Modal>
     </>
