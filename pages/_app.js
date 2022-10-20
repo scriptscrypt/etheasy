@@ -8,6 +8,9 @@ function MyApp({ Component, pageProps }) {
   const DynamicNavbar = dynamic(() => import('../components/main/Navbar'), {
     ssr: false,
   })
+  const DynamicWallet = dynamic(() => import('../context/wallet'), {
+    ssr: false,
+  })
   
   const Layout = Component.Layout || EmptyLayout;
 
